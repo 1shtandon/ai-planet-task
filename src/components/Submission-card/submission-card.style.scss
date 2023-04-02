@@ -1,0 +1,65 @@
+.submission-card-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    background-color: white;
+    max-height: 289px;
+    max-width: 310px;
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    margin-left: 5%;
+    margin-bottom: 4%;
+    // on hover effect
+    &:hover {
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    }
+}
+
+.title-container{
+    display: flex;
+    width: 100%;
+}
+
+.card-img {
+    height: 100px;
+    width: 100px;
+    border-radius: 8px;
+    margin-right: 20px;
+    object-fit: cover;
+}
+
+.card-title {
+    height: 30px;
+    width: 188px;
+    font-size: 20px;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    font-family: 'Poppins';
+}
+
+.card-description {
+    height: 60px;
+    width: 312px;
+    font-size: 16px;
+    line-height: 19.36px;
+    margin-top: 10%;
+    font-family: 'Poppins';
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.time-since-submit {
+    height: 17px;
+    width: 312px;
+    margin-top: 10%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    font-style: oblique;
+    color: #666666;
+    font-family: 'Poppins';
+}

@@ -1,0 +1,81 @@
+.heading-card-container {
+    display: flex;
+    width: 100%;
+    height: 35vh;
+    background-color: hsl(197, 100%, 14%);
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+
+    .heading-card-info {
+        width: 80%;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+
+
+        .heading-card-title {
+            color: white;
+            width: 70%;
+            padding: 0;
+            font-size: 40px;
+            line-height: 60px;
+            margin-top: 2%;
+            margin-left: 11rem;
+            margin-right: 40%;
+            margin-bottom: 2%;
+            font-weight: 600;
+            max-height: 80px;
+            overflow-y: scroll;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+
+            &::-webkit-scrollbar {
+                display: none;
+            }
+        }
+
+        .heading-card-description {
+            color: white;
+            width: 70%;
+            font-size: 20px;
+            margin-top: 0;
+            margin-left: 11rem;
+            margin-right: 40%;
+            font-weight: 500;
+            max-height: 100px;
+            overflow-y: scroll;
+                scrollbar-width: none;
+                -ms-overflow-style: none;
+            
+                &::-webkit-scrollbar {
+                    display: none;
+                }
+        }
+
+        .upload-btn {
+            margin-top: 2%;
+            margin-left: 11rem;
+            padding: "10px";
+            border: "none";
+            background-color: #44924C;
+            color: white;
+            width: 200px;
+            height: 50px;
+            border-radius: 10px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+    }
+
+    .heading-card-image {
+        width: 20%;
+
+        .bulb {
+            width: 80%;
+            margin-top: 5%;
+            height: 80%;
+            object-fit: cover;
+        }
+    }
+
+}
