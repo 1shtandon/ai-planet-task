@@ -1,0 +1,6 @@
+.submission-list {
+    margin-top: 2rem;
+    width: 83%;
+    display: grid;
+    grid-template-columns: repeat(3 , 1fr);
+}

@@ -4,22 +4,25 @@
     justify-content: flex-start;
     align-items: flex-start;
     background-color: white;
+    width: 80%;
     max-height: 289px;
-    max-width: 310px;
     border-radius: 16px;
     padding: 24px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     margin-left: 5%;
-    margin-bottom: 4%;
+    margin-bottom: 8%;
+    box-shadow: #666666;
+
     // on hover effect
     &:hover {
         box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     }
 }
 
-.title-container{
+.title-container {
     display: flex;
     width: 100%;
+    font-weight: 700;
 }
 
 .card-img {
@@ -42,18 +45,25 @@
 
 .card-description {
     height: 60px;
-    width: 312px;
+    width: 100%;
+    max-width: 300px;
     font-size: 16px;
     line-height: 19.36px;
     margin-top: 10%;
     font-family: 'Poppins';
+    font-weight: 500;
     text-overflow: ellipsis;
-    overflow: hidden;
+    overflow-y: scroll;
+    scrollbar-width: 0;
+    -ms-overflow-style: none;
+    &::-webkit-scrollbar {
+        display: none;
+    }
 }
 
 .time-since-submit {
     height: 17px;
-    width: 312px;
+    width: 100%;
     margin-top: 10%;
     display: flex;
     flex-direction: row;
@@ -62,4 +72,5 @@
     font-style: oblique;
     color: #666666;
     font-family: 'Poppins';
+
 }

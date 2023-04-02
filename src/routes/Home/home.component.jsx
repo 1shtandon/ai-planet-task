@@ -1,16 +1,24 @@
 import HeadingCard from "../../components/heading-card/heading-card.componenet";
-import SubmissionCard from "../../components/Submission-card/submission-card.component";
+import SubmissionList from "../../components/submission-list/submission-list.component";
 import SubmissionNavbar from "../../components/submission-navbar/submission-navbar.component";
+import { useState, useEffect } from 'react';
+import { useSelector } from 'react-redux';
+import { selectSubmissionListItems, selectFavouriteSubmissions } from "../../store/Submission-List/submission-list.selector";
+import './home.style.scss';
 
 const submission =
 {
     title: "Submission 1",
-    coverImg: "https://images.unsplash.com/photo-1679678691010-985ab6b8ff62?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60",
+    coverImage: "https://images.unsplash.com/photo-1680169259359-b7f38c08c0f9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw4fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60",
     description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae.",
-    timeOfSubmission: "04-01-2023"
+    hackathonStartDate: "04-01-2023"
 };
 
+
 const Home = () => {
+
+    const submissions = useSelector(selectSubmissionListItems);
+
     return (
         <>
             <HeadingCard />
@@ -19,7 +27,7 @@ const Home = () => {
                     <SubmissionNavbar />
                 </div>
                 <div className="cards-list-container">
-                    <SubmissionCard title={submission.title} coverImg={submission.coverImg} description={submission.description} timeOfSubmission={submission.timeOfSubmission} />
+                    <SubmissionList submissions={submissions} />
                 </div>
             </div>
         </>

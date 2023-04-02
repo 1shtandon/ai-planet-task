@@ -1,7 +1,7 @@
 import './submission-card.style.scss'
 
-const getTimeDifference = (timeOfSubmission) => {
-    const startTime = new Date(timeOfSubmission).getTime();
+const getTimeDifference = (hackathonStartDate) => {
+    const startTime = new Date(hackathonStartDate).getTime();
     const currentTime = new Date().getTime();
     const timeDifference = currentTime - startTime;
     const seconds = Math.floor(timeDifference / 1000);
@@ -25,16 +25,16 @@ const getTimeDifference = (timeOfSubmission) => {
     }
 };
 
-const SubmissionCard = ({ title, coverImg, description, timeOfSubmission }) => {
+const SubmissionCard = ({ title, coverImage, description, hackathonStartDate }) => {
     return (
         <div className="submission-card-container">
             <div className='title-container'>
-                <img className='card-img' src={coverImg} alt='submitimg'></img>
+                <img className='card-img' src={coverImage} alt='submitimg'></img>
                 <h5 className='card-title'>{title}</h5>
             </div>
             <div className='card-description' >{description}</div>
             <div className='time-since-submit'>
-                <p>{getTimeDifference(timeOfSubmission)}</p>
+                <p>{getTimeDifference(hackathonStartDate)}</p>
             </div>
         </div>
     )
