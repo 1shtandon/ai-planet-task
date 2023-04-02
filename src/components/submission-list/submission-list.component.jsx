@@ -1,7 +1,7 @@
 import SubmissionCard from "../Submission-card/submission-card.component";
 import './submission-list.styles.scss';
 
-const SubmissionList = ({ submissions, sortOrder }) => {
+const SubmissionList = ({ submissions, sortOrder, searchInput }) => {
 
     const sortSubmissionsNewest = () => {
         submissions.sort((a, b) => {
@@ -15,12 +15,21 @@ const SubmissionList = ({ submissions, sortOrder }) => {
         });
     };
 
+    const filterSubmissionOnSearch = (searchInput) => {
+        submissions = submissions.filter((submission) => {
+            return submission.title.toLowerCase().includes(searchInput.toLowerCase());
+        });
+    };
+
     if (sortOrder === 'newest') {
         sortSubmissionsNewest();
     } else if (sortOrder === 'oldest') {
         sortSubmissionsOldest();
     }
 
+    if (searchInput !== "") {
+        filterSubmissionOnSearch(searchInput);
+    }
 
     return (
         <div className="submission-list">

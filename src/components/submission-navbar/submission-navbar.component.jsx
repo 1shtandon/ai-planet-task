@@ -48,11 +48,10 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
     },
 }));
 
-const SubmissionNavbar = ({ sortOrder, setSortOrder, submissionType, setSubmissionType }) => {
-    
+const SubmissionNavbar = ({ sortOrder, setSortOrder, submissionType, setSubmissionType, setSearchInput }) => {
+
 
     const handleChange = (event, newSubmissionType) => {
-        console.log(newSubmissionType);
         setSubmissionType(newSubmissionType);
     };
 
@@ -60,6 +59,10 @@ const SubmissionNavbar = ({ sortOrder, setSortOrder, submissionType, setSubmissi
         setSortOrder(event.target.value);
     };
 
+
+    const handleSearchInput = (event) => {
+        setSearchInput(event.target.value);
+    };
 
     return (
         <Toolbar sx={{
@@ -71,9 +74,8 @@ const SubmissionNavbar = ({ sortOrder, setSortOrder, submissionType, setSubmissi
                 <Tabs
                     value={submissionType}
                     onChange={handleChange}
-                    textColor="green"
+                    textColor="inherit"
                     aria-label="secondary tabs example"
-                    // color blue
                     TabIndicatorProps={{ style: { background: 'green' } }}
                     sx={{ marginLeft: '0px' }}
                 >
@@ -106,11 +108,11 @@ const SubmissionNavbar = ({ sortOrder, setSortOrder, submissionType, setSubmissi
                             width: '100%',
                         }
                     }
+                    onChange={handleSearchInput}
                 />
             </Search>
             <Select
                 value={sortOrder}
-                // label="sortOrder"
                 onChange={handleChangeSortOrder}
                 sx={{
                     fontFamily: 'Poppins',
