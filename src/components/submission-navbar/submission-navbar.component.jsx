@@ -17,11 +17,8 @@ const Search = styled('div')(({ theme }) => ({
         backgroundColor: alpha(theme.palette.common.white, 0.25),
     },
     marginLeft: 0,
-    width: '100%',
-    [theme.breakpoints.up('sm')]: {
-        marginLeft: theme.spacing(1),
-        width: 'auto',
-    },
+    width: 'atuo',
+
 }));
 
 const SearchIconWrapper = styled('div')(({ theme }) => ({
@@ -51,14 +48,13 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
     },
 }));
 
-const SubmissionNavbar = () => {
-    const [value, setValue] = React.useState('one');
+const SubmissionNavbar = ({ sortOrder, setSortOrder, submissionType, setSubmissionType }) => {
+    
 
-    const handleChange = (event, newValue) => {
-        setValue(newValue);
+    const handleChange = (event, newSubmissionType) => {
+        console.log(newSubmissionType);
+        setSubmissionType(newSubmissionType);
     };
-
-    const [sortOrder, setSortOrder] = React.useState('newest');
 
     const handleChangeSortOrder = (event) => {
         setSortOrder(event.target.value);
@@ -68,11 +64,12 @@ const SubmissionNavbar = () => {
     return (
         <Toolbar sx={{
             marginLeft: '10rem',
-            width: '80vw'
+            width: '80vw',
+            marginTop: '2rem',
         }}>
             <Box sx={{ width: '70%', marginLeft: '0px' }}>
                 <Tabs
-                    value={value}
+                    value={submissionType}
                     onChange={handleChange}
                     textColor="green"
                     aria-label="secondary tabs example"
@@ -80,10 +77,10 @@ const SubmissionNavbar = () => {
                     TabIndicatorProps={{ style: { background: 'green' } }}
                     sx={{ marginLeft: '0px' }}
                 >
-                    <Tab value="one" label="All Submissions" sx={{
+                    <Tab value={"one"} label="All Submissions" sx={{
                         fontFamily: 'Poppins', textTransform: 'none', fontWeight: 'bold'
                     }} />
-                    <Tab value="two" label="Favourite Submissions" sx={{
+                    <Tab value={"two"} label="Favourite Submissions" sx={{
                         fontFamily: 'Poppins', textTransform: 'none', fontWeight: 'bold'
                     }} />
                 </Tabs>
@@ -114,7 +111,7 @@ const SubmissionNavbar = () => {
             <Select
                 value={sortOrder}
                 // label="sortOrder"
-                onChange={handleChange}
+                onChange={handleChangeSortOrder}
                 sx={{
                     fontFamily: 'Poppins',
                     border: '1px solid black',

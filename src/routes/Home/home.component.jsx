@@ -17,17 +17,21 @@ const submission =
 
 const Home = () => {
 
+    const [sortOrder, setSortOrder] = useState('newest');
+    const [submissionType, setSubmissionType] = useState("one");
+
     const submissions = useSelector(selectSubmissionListItems);
+    const favouriteSubmissions = useSelector(selectFavouriteSubmissions);
 
     return (
         <>
             <HeadingCard />
             <div className="submission-container">
                 <div className="submission-header">
-                    <SubmissionNavbar />
+                    <SubmissionNavbar sortOrder={sortOrder} setSortOrder={setSortOrder} submissionType={submissionType} setSubmissionType={setSubmissionType} />
                 </div>
                 <div className="cards-list-container">
-                    <SubmissionList submissions={submissions} />
+                    {submissionType === "one" ? <SubmissionList submissions={submissions} sortOrder={sortOrder} /> : <SubmissionList submissions={favouriteSubmissions} sortOrder={sortOrder} />}
                 </div>
             </div>
         </>
