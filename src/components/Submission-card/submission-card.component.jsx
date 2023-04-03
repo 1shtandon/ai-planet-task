@@ -1,7 +1,8 @@
 import './submission-card.style.scss'
+import { useNavigate } from 'react-router-dom';
 
-const getTimeDifference = (hackathonStartDate) => {
-    const startTime = new Date(hackathonStartDate).getTime();
+const getTimeDifference = (timeOfSubmission) => {
+    const startTime = new Date(timeOfSubmission).getTime();
     const currentTime = new Date().getTime();
     const timeDifference = currentTime - startTime;
     const seconds = Math.floor(timeDifference / 1000);
@@ -25,16 +26,23 @@ const getTimeDifference = (hackathonStartDate) => {
     }
 };
 
-const SubmissionCard = ({ title, coverImage, description, hackathonStartDate }) => {
+const SubmissionCard = ({ id, title, coverImage, description, timeOfSubmission }) => {
+
+    const navigate = useNavigate();
+
     return (
-        <div className="submission-card-container">
+        <div className="submission-card-container"
+            onClick={() => {
+                navigate(`/submission/${id}`);
+            }}
+        >
             <div className='title-container'>
                 <img className='card-img' src={coverImage} alt='submitimg'></img>
                 <h5 className='card-title'>{title}</h5>
             </div>
             <div className='card-description' >{description}</div>
             <div className='time-since-submit'>
-                <p>{getTimeDifference(hackathonStartDate)}</p>
+                <p>{getTimeDifference(timeOfSubmission)}</p>
             </div>
         </div>
     )

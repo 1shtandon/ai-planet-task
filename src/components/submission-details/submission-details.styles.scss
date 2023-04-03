@@ -1,0 +1,192 @@
+.submission-header-container {
+    display: flex;
+    justify-content: space-between;
+    background-color: #003145;
+    color: #ffffff;
+    align-items: center;
+    padding: 3rem;
+    padding-left: 6rem;
+    font-family: 'Poppins';
+    padding-right: 6rem;
+
+    .submission-title-container {
+        display: flex;
+        gap: 3rem;
+        margin-left: 5rem;
+        margin-top: 3%;
+
+        .submission-img {
+            width: 7rem;
+            height: 7rem;
+            border-radius: 10%;
+        }
+
+        .submission-title {
+            font-size: 2.6rem;
+            font-weight: 700;
+            line-height: 2.1rem;
+        }
+    }
+
+    .submission-desc {
+        margin-left: 5rem;
+        font-weight: 500;
+        font-size: large;
+        width: 80%;
+    }
+
+    .icon-container {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+        margin-left: 5rem;
+
+        .vertical-line-icon {
+            width: 1px;
+            height: 1.7rem;
+            background-color: #968b8b;
+        }
+
+        .star-icon {
+            padding-top: 0.25rem;
+            padding-bottom: 0.25rem;
+            height: 1.3rem;
+
+            border-right-width: 2px;
+            border-color: #F5F5F5;
+
+            &.star-icon-clicked {
+                background-color: #d40c0c;
+                border-color: #F5F5F5;
+            }
+        }
+
+        .calendar-icon {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            background-color: #255973;
+            padding-left: 0.5rem;
+            padding-right: 0.5rem;
+            padding-top: 0.25rem;
+            padding-bottom: 0.25rem;
+            border-radius: 150px;
+        }
+    }
+
+    .buttons-container {
+        display: flex;
+        flex-direction: column;
+        margin-right: 15rem;
+        margin-bottom: 3%;
+
+        >* {
+            margin-top: 1rem;
+        }
+
+        .icon-button {
+            display: flex;
+            align-items: center;
+            color: white;
+            background-color: #003145;
+            gap: 0.75rem;
+            border-width: 2px;
+            border-radius: 0.5rem;
+            border: 1px solid white;
+            padding-left: 1.7rem;
+            padding-right: 1rem;
+            padding-top: 0.25rem;
+            padding-bottom: 0.25rem;
+            font-weight: 500;
+            font-size: large;
+        }
+    }
+}
+
+.submission-body-container {
+    display: flex;
+    padding: 3.5rem;
+    padding-top: 2rem;
+    background-color: white;
+    font-family: 'Poppins';
+
+    .submission-summary-container {
+        margin-left: 7rem;
+        margin-right: 3rem;
+        width: 60%;
+
+        .submission-summary-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            line-height: 2.1rem;
+        }
+
+        #summary-body {
+            font-size: 1.1rem;
+            font-weight: 500;
+            line-height: 1.5rem;
+            margin-top: 1rem;
+            justify-content: right;
+        }
+    }
+
+    .submission-info-container {
+        display: flex;
+        flex-direction: column;
+
+        >* {
+            margin-top: 1rem;
+        }
+
+        width: 15%;
+
+
+        .hackathon-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .date-container {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 5%;
+        }
+
+        #hackathon-date {
+            font-size: 1.1rem;
+            font-weight: 500;
+            line-height: 1rem;
+            margin-top: 0%;
+            margin-bottom: 0;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+
+        .icon-link {
+            border-width: 1px;
+            display: flex;
+            align-items: center;
+            justify-content: centre;
+            padding-left: 0.7rem;
+            padding-right: 0.7rem;
+            padding-top: 0.4rem;
+            padding-bottom: 0.6rem;
+            border-radius: 10px;
+            font-family: 'Poppins';
+            font-weight: 600;
+            font-size: medium;
+            color: #626668;
+            background-color: white;
+            width: 75%;
+            min-width: fit-content;
+            text-decoration: none;
+            cursor: pointer;
+            margin-top: 0.7rem;
+        }
+    }
+}

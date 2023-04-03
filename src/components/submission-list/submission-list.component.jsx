@@ -38,10 +38,11 @@ const SubmissionList = ({ submissions, sortOrder, searchInput }) => {
                     return (
                         <SubmissionCard
                             key={index}
+                            id={submission.id}
                             title={submission.title}
                             coverImage={submission.coverImage}
                             description={submission.description}
-                            hackathonStartDate={submission.hackathonStartDate}
+                            timeOfSubmission={submission.timeOfSubmission}
                         />
                     );
                 })
