@@ -10,9 +10,9 @@ const HeadingCard = () => {
                     Hackathon Submissions
                 </div>
                 <p className="heading-card-description">
-                    Lorem ipsum dolor sit amet consectetur. Urna cursus amet pellentesque in parturient purus feugiat faucibus. Congue laoreet duis porta turpis eget suspendisse ac pharetra amet. Vel nisl tempus nec vitae. 
+                    Lorem ipsum dolor sit amet consectetur. Urna cursus amet pellentesque in parturient purus feugiat faucibus. Congue laoreet duis porta turpis eget suspendisse ac pharetra amet. Vel nisl tempus nec vitae.
                 </p>
-                <Link to="/upload">
+                <Link to="/upload" className="upload-link">
                     <button className="upload-btn">
                         Upload Submission
                     </button>
@@ -20,6 +20,7 @@ const HeadingCard = () => {
             </div>
             <div className="heading-card-image">
                 <Bulb className="bulb" />
+
             </div>
 
         </div>

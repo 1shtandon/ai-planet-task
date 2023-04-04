@@ -15,7 +15,7 @@ function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    document.title = "AI Planet"
+    document.title = "AI Planet Task"
     const submissionList = JSON.parse(localStorage.getItem('submissionList'));
     if (submissionList) {
       console.log(submissionList);
