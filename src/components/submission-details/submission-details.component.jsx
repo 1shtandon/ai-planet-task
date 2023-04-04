@@ -3,7 +3,7 @@ import { BsFillPencilFill } from 'react-icons/bs'
 import { MdDelete } from 'react-icons/md'
 import { FiExternalLink } from "react-icons/fi"
 import "./submission-details.styles.scss"
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { selectSubmissionById } from '../../store/Submission-List/submission-list.selector'
 import { useSelector, useDispatch } from 'react-redux'
 import { Navigate } from 'react-router-dom'

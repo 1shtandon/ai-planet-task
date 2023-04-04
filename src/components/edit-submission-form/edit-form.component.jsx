@@ -103,7 +103,7 @@ const EditForm = () => {
     };
 
     const validateForm = () => {
-        const { title, summary, description, coverImage, hackathonName, hackathonStartDate, hackathonEndDate } = formValues;
+        const { title, summary, description, hackathonName, hackathonStartDate, hackathonEndDate } = formValues;
 
         if (hackathonStartDate > hackathonEndDate) {
             alert('Enter valid dates');

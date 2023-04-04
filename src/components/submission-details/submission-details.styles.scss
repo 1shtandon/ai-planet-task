@@ -250,14 +250,12 @@
             height: 2.5rem;
 
 
-            // background color for 1st button
             &:nth-child(1) {
                 background-color: #ffffff;
                 color: rgb(0, 0, 0);
                 border : 1px solid #003145;
             }
 
-            // background color for 2nd button
             &:nth-child(2) {
                 background-color: #d40c0c;
                 color: white;

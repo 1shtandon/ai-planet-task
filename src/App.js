@@ -8,6 +8,7 @@ import EditSubmission from './routes/Edit-submission/edit-submission.component';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { rehydrateSubmissionListAction } from './store/Submission-List/submission-list.action';
+import Page404 from './routes/404-page/page-404.component';
 
 function App() {
 
@@ -31,7 +32,7 @@ function App() {
           <Route path='/upload' element={<UploadSubmissionForm />} />
           <Route path='/edit/*' element={<EditSubmission />} />
           <Route path='/submission/*' element={<Submission />} />
-          <Route path='*' element={404} />
+          <Route path='*' element={<Page404/>} />
         </Route>
       </Routes>
     </div>
