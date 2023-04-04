@@ -1,5 +1,6 @@
-import SubmissionCard from "../Submission-card/submission-card.component";
 import './submission-list.styles.scss';
+import SubmissionCard from '../submission-card/submission-card.component';
+
 
 const SubmissionList = ({ submissions, sortOrder, searchInput }) => {
 
@@ -41,7 +42,7 @@ const SubmissionList = ({ submissions, sortOrder, searchInput }) => {
                             id={submission.id}
                             title={submission.title}
                             coverImage={submission.coverImage}
-                            description={submission.description}
+                            summary={submission.summary}
                             timeOfSubmission={submission.timeOfSubmission}
                         />
                     );

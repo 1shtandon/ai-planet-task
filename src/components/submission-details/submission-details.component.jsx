@@ -1,16 +1,20 @@
-import { AiFillGithub, AiOutlineStar, AiTwotoneCalendar } from 'react-icons/ai'
+import { AiFillGithub, AiOutlineStar, AiTwotoneCalendar, AiFillStar } from 'react-icons/ai'
 import { BsFillPencilFill } from 'react-icons/bs'
 import { MdDelete } from 'react-icons/md'
 import { FiExternalLink } from "react-icons/fi"
 import "./submission-details.styles.scss"
-import { useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { selectSubmissionById } from '../../store/Submission-List/submission-list.selector'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import { Navigate } from 'react-router-dom'
+import { toggleFavouriteAction } from '../../store/Submission-List/submission-list.action'
 
 const SubmissionDetails = () => {
     const { id } = useParams();
     const submission = useSelector(selectSubmissionById(id));
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+    const submissionList = useSelector(state => state.submissionList.submissionList);
 
     if (!submission) {
         return <Navigate to="/" />
@@ -38,6 +42,22 @@ const SubmissionDetails = () => {
         return url;
     }
 
+    const checkImageType = (image) => {
+        // if image type is object then it is a file
+        // if (typeof image === 'object') {
+        //     return URL.createObjectURL(image);
+        // }
+        // else {
+            return image;
+        // }
+    };
+
+    
+
+    const handleFavorite = () => {
+        dispatch(toggleFavouriteAction(submissionList, submission.id))
+    }
+
     return (
 
 
@@ -45,13 +65,16 @@ const SubmissionDetails = () => {
             <div className="submission-header-container" >
                 <div >
                     <div className='submission-title-container'>
-                        <img className='submission-img' src={coverImage} alt="" />
+                        <img className='submission-img' src={checkImageType(coverImage)} alt="" />
                         <h2 className='submission-title'>{title}</h2>
                     </div>
-                    <p className='submission-desc'>{description}</p>
+                    <p className='submission-desc'>{summary}</p>
                     <div className='icon-container'>
                         <div className='star-icon'>
-                            <AiOutlineStar size={20} />
+                            {submission.isFavourite ? <AiFillStar size={20}
+                                onClick={handleFavorite}
+                            /> : <AiOutlineStar size={20}
+                                onClick={handleFavorite} />}
                         </div>
                         <div className='vertical-line-icon'></div>
                         <div className='calendar-icon'>
@@ -62,7 +85,13 @@ const SubmissionDetails = () => {
                     </div>
                 </div>
                 <div className='buttons-container'>
-                    <button className='icon-button'> <BsFillPencilFill />Edit</button>
+                    <button className='icon-button'
+                        onClick={() => (
+                            navigate(`/edit/${submission.id}`)
+                        )}
+                    >
+                        <BsFillPencilFill /> Edit
+                    </button>
                     <button className='icon-button'> <MdDelete />Delete</button>
                 </div>
 
@@ -71,7 +100,7 @@ const SubmissionDetails = () => {
                 <div className='submission-summary-container'>
                     <span className='submission-summary-title'>Description</span>
                     <p id='summary-body'>
-                        {summary}
+                        {description}
                     </p>
                 </div>
 

@@ -26,8 +26,18 @@ const getTimeDifference = (timeOfSubmission) => {
     }
 };
 
-const SubmissionCard = ({ id, title, coverImage, description, timeOfSubmission }) => {
+const SubmissionCard = ({ id, title, coverImage, summary, timeOfSubmission }) => {
 
+    const checkImageType = (image) => {
+        // if image type is object then it is a file
+        if (typeof image === 'object') {
+            return URL.createObjectURL(image);
+        }
+        // if image type is string then it is a url
+        else {
+            return image;
+        }
+    };
     const navigate = useNavigate();
 
     return (
@@ -37,10 +47,10 @@ const SubmissionCard = ({ id, title, coverImage, description, timeOfSubmission }
             }}
         >
             <div className='title-container'>
-                <img className='card-img' src={coverImage} alt='submitimg'></img>
+                <img className='card-img' src={checkImageType(coverImage)} alt='submitimg'></img>
                 <h5 className='card-title'>{title}</h5>
             </div>
-            <div className='card-description' >{description}</div>
+            <div className='card-description' >{summary}</div>
             <div className='time-since-submit'>
                 <p>{getTimeDifference(timeOfSubmission)}</p>
             </div>

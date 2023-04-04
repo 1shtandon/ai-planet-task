@@ -1,13 +1,17 @@
+.body{
+    background-color: #203791;
+}
 .submission-header-container {
     display: flex;
     justify-content: space-between;
     background-color: #003145;
     color: #ffffff;
     align-items: center;
-    padding: 3rem;
+    padding: 3vh 0;
     padding-left: 6rem;
     font-family: 'Poppins';
     padding-right: 6rem;
+    height: 25vh;
 
     .submission-title-container {
         display: flex;
@@ -100,16 +104,18 @@
             padding-bottom: 0.25rem;
             font-weight: 500;
             font-size: large;
+            cursor: pointer;
         }
     }
 }
 
 .submission-body-container {
     display: flex;
-    padding: 3.5rem;
-    padding-top: 2rem;
+    padding: 5vh 3.5rem;
     background-color: white;
     font-family: 'Poppins';
+    // give full height to the body
+    height: 52vh;
 
     .submission-summary-container {
         margin-left: 7rem;
