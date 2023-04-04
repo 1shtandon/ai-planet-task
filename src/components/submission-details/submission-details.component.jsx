@@ -7,7 +7,9 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 import { selectSubmissionById } from '../../store/Submission-List/submission-list.selector'
 import { useSelector, useDispatch } from 'react-redux'
 import { Navigate } from 'react-router-dom'
-import { toggleFavouriteAction } from '../../store/Submission-List/submission-list.action'
+import { toggleFavouriteAction, deleteSubmissionAction } from '../../store/Submission-List/submission-list.action'
+import { Modal } from '@mui/material'
+import { useState } from 'react'
 
 const SubmissionDetails = () => {
     const { id } = useParams();
@@ -15,6 +17,9 @@ const SubmissionDetails = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const submissionList = useSelector(state => state.submissionList.submissionList);
+    const [open, setOpen] = useState(false);
+    const handleOpen = () => setOpen(true);
+    const handleClose = () => setOpen(false);
 
     if (!submission) {
         return <Navigate to="/" />
@@ -43,16 +48,10 @@ const SubmissionDetails = () => {
     }
 
     const checkImageType = (image) => {
-        // if image type is object then it is a file
-        // if (typeof image === 'object') {
-        //     return URL.createObjectURL(image);
-        // }
-        // else {
-            return image;
-        // }
+        return image;
     };
 
-    
+
 
     const handleFavorite = () => {
         dispatch(toggleFavouriteAction(submissionList, submission.id))
@@ -92,7 +91,10 @@ const SubmissionDetails = () => {
                     >
                         <BsFillPencilFill /> Edit
                     </button>
-                    <button className='icon-button'> <MdDelete />Delete</button>
+                    <button className='icon-button'
+                        onClick={handleOpen}
+
+                    > <MdDelete />Delete</button>
                 </div>
 
             </div>
@@ -120,7 +122,34 @@ const SubmissionDetails = () => {
                 </div>
 
             </div>
+
+            <Modal
+                open={open}
+                onClose={handleClose}
+                aria-labelledby="modal-title"
+                aria-describedby="modal-modal-description"
+            >
+                <div className='modal-container'>
+                    <div className='modal-content'>
+                        <h2 id="modal-title">Delete submission</h2>
+                        <p id="modal-description">
+                            The action is irreversible. Are you sure you want to delete this submission?
+                        </p>
+                    </div>
+
+                    <div className='modal-buttons'>
+                        <button className='modal-button' onClick={handleClose}>Cancel</button>
+                        <button className='modal-button' onClick={() => {
+                            dispatch(deleteSubmissionAction(submissionList, submission.id));
+                            navigate('/');
+                        }}>Delete</button>
+                    </div>
+                </div>
+            </Modal>
+
         </div>
+
+
 
     )
 };

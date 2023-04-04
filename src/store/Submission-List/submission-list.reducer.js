@@ -69,7 +69,8 @@ export const submissionListReducer = (state = SUBMISSION_LIST_INITIAL_STATE,
 
     switch (type) {
         case SUBMISSION_LIST_ACTION_TYPES.SET_SUBMISSION_LIST:
-            return {
+        localStorage.setItem("submissionList", JSON.stringify(payload));    
+        return {
                 ...state,
                 submissionList: payload
             };

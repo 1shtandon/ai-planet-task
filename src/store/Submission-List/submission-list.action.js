@@ -67,5 +67,13 @@ export const toggleFavouriteAction = (submissionList, id) => {
     return createAction(SUBMISSION_LIST_ACTION_TYPES.SET_SUBMISSION_LIST, newSubmissionList);
 }
 
+export const rehydrateSubmissionListAction = (submissionList) => {
+    return createAction(SUBMISSION_LIST_ACTION_TYPES.SET_SUBMISSION_LIST, submissionList);
+}
+
+export const deleteSubmissionAction = (submissionList, id) => {
+    const newSubmissionList = submissionList.filter(submission => submission.id !== id);
+    return createAction(SUBMISSION_LIST_ACTION_TYPES.SET_SUBMISSION_LIST, newSubmissionList);
+}
 
 
