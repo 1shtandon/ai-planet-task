@@ -1,86 +1,100 @@
 .submission-header-container {
     display: flex;
-    justify-content: space-between;
+    // justify-content: space-between;
     background-color: #003145;
     color: #ffffff;
     align-items: center;
-    padding: 3vh 0;
-    padding-left: 6rem;
+    display: flex;
+    padding: 5vh 3.5rem;
     font-family: 'Poppins';
-    padding-right: 6rem;
-    height: 25vh;
+    height: 30vh;
 
-    .submission-title-container {
+    .submission-subcontainer {
         display: flex;
-        gap: 3rem;
-        margin-left: 5rem;
-        margin-top: 3%;
+        flex-direction: column;
+        gap: 1rem;
+        margin-left: 7rem;
+        margin-right: 3rem;
+        width: 60%;
 
-        .submission-img {
-            width: 7rem;
-            height: 7rem;
-            border-radius: 10%;
-        }
 
-        .submission-title {
-            font-size: 2.6rem;
-            font-weight: 700;
-            line-height: 2.1rem;
-        }
-    }
+        .submission-title-container {
+            max-height: 60%;
+            display: flex;
+            gap: 3rem;
+            margin-top: 0%;
+            box-sizing: border-box;
 
-    .submission-desc {
-        margin-left: 5rem;
-        font-weight: 500;
-        font-size: large;
-        width: 80%;
-    }
+            .submission-img {
+                width: 7rem;
+                height: 7rem;
+                border-radius: 10%;
+            }
 
-    .icon-container {
-        display: flex;
-        align-items: center;
-        gap: 2rem;
-        margin-left: 5rem;
-
-        .vertical-line-icon {
-            width: 1px;
-            height: 1.7rem;
-            background-color: #968b8b;
-        }
-
-        .star-icon {
-            padding-top: 0.25rem;
-            padding-bottom: 0.25rem;
-            height: 1.3rem;
-
-            border-right-width: 2px;
-            border-color: #F5F5F5;
-
-            &.star-icon-clicked {
-                background-color: #d40c0c;
-                border-color: #F5F5F5;
+            .submission-title {
+                font-size: 2.6rem;
+                font-weight: 700;
+                line-height: 2.1rem;
             }
         }
 
-        .calendar-icon {
+        .submission-desc {
+            box-sizing: border-box;
+            height: 20%;
+            padding: 0%;
+            margin: 0;
+            margin-top: 2%;
+            font-weight: 500;
+            font-size: large;
+            width: 80%;
+        }
+
+        .icon-container {
+            height: 20%;
+            box-sizing: border-box;
             display: flex;
             align-items: center;
-            gap: 0.5rem;
-            font-size: 0.85rem;
-            background-color: #255973;
-            padding-left: 0.5rem;
-            padding-right: 0.5rem;
-            padding-top: 0.25rem;
-            padding-bottom: 0.25rem;
-            border-radius: 150px;
+            gap: 2rem;
+
+            .vertical-line-icon {
+                width: 1px;
+                height: 1.7rem;
+                background-color: #968b8b;
+            }
+
+            .star-icon {
+                padding-top: 0.25rem;
+                padding-bottom: 0.25rem;
+                height: 1.3rem;
+
+                border-right-width: 2px;
+                border-color: #F5F5F5;
+
+                &.star-icon-clicked {
+                    background-color: #d40c0c;
+                    border-color: #F5F5F5;
+                }
+            }
+
+            .calendar-icon {
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+                font-size: 0.85rem;
+                background-color: #255973;
+                padding-left: 0.5rem;
+                padding-right: 0.5rem;
+                padding-top: 0.25rem;
+                padding-bottom: 0.25rem;
+                border-radius: 150px;
+            }
         }
     }
 
     .buttons-container {
         display: flex;
         flex-direction: column;
-        margin-right: 15rem;
-        margin-bottom: 3%;
+        ;
 
         >* {
             margin-top: 1rem;
@@ -111,7 +125,7 @@
     padding: 5vh 3.5rem;
     background-color: white;
     font-family: 'Poppins';
-    height: 52vh;
+    height: 47vh;
 
     .submission-summary-container {
         margin-left: 7rem;
@@ -141,7 +155,7 @@
             margin-top: 1rem;
         }
 
-        width: 15%;
+        width: 35%;
 
 
         .hackathon-title {
@@ -172,20 +186,18 @@
         .icon-link {
             border-width: 1px;
             display: flex;
-            align-items: center;
-            justify-content: centre;
-            padding-left: 0.7rem;
-            padding-right: 0.7rem;
             padding-top: 0.4rem;
             padding-bottom: 0.6rem;
+            text-align: center;
+            align-items: center;
+            justify-content: center;
             border-radius: 10px;
             font-family: 'Poppins';
             font-weight: 600;
             font-size: medium;
             color: #626668;
             background-color: white;
-            width: 75%;
-            min-width: fit-content;
+            width: 50%;
             text-decoration: none;
             cursor: pointer;
             margin-top: 0.7rem;
@@ -252,7 +264,7 @@
             &:nth-child(1) {
                 background-color: #ffffff;
                 color: rgb(0, 0, 0);
-                border : 1px solid #003145;
+                border: 1px solid #003145;
             }
 
             &:nth-child(2) {

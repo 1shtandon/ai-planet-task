@@ -17,11 +17,11 @@
             color: white;
             width: 70%;
             padding: 0;
-            font-size: 40px;
+            font-size: 5vh;
             line-height: 60px;
             margin-top: 2%;
-            margin-left: 11rem;
-            margin-right: 40%;
+            margin-left: 14%;
+            margin-right: 16%;
             margin-bottom: 2%;
             font-weight: 600;
             max-height: 80px;
@@ -37,10 +37,10 @@
         .heading-card-description {
             color: white;
             width: 70%;
-            font-size: 20px;
+            font-size: 2vh;
             margin-top: 0;
-            margin-left: 11rem;
-            margin-right: 40%;
+            margin-left: 14%;
+            margin-right: 16%;
             font-weight: 500;
             max-height: 100px;
             overflow-y: scroll;
@@ -54,19 +54,22 @@
         .upload-link{
             width: 200px;
             margin-top: 2%;
+            margin-left: 14%;
         }
 
         .upload-btn {
             margin-top: 2%;
-            margin-left: 11rem;
+            
             padding: "10px";
             border: "none";
             background-color: #44924C;
             color: white;
             width: 200px;
             height: 50px;
+            min-width: fit-content;
+            max-width: 300px;
             border-radius: 10px;
-            font-size: 18px;
+            font-size: 1em;
             cursor: pointer;
             font-weight: 500;
             &:hover {

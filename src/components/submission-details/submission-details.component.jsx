@@ -62,7 +62,7 @@ const SubmissionDetails = () => {
 
         <div>
             <div className="submission-header-container" >
-                <div >
+                <div className='submission-subcontainer'>
                     <div className='submission-title-container'>
                         <img className='submission-img' src={checkImageType(coverImage)} alt="" />
                         <h2 className='submission-title'>{title}</h2>

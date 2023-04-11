@@ -66,7 +66,7 @@ const SubmissionNavbar = ({ sortOrder, setSortOrder, submissionType, setSubmissi
 
     return (
         <Toolbar sx={{
-            marginLeft: '10rem',
+            marginLeft: '8.8%',
             width: '80vw',
             marginTop: '2rem',
         }}>
@@ -88,7 +88,7 @@ const SubmissionNavbar = ({ sortOrder, setSortOrder, submissionType, setSubmissi
                 </Tabs>
             </Box>
             <Search sx={{
-                marginLeft: '100px',
+                // marginLeft: '100px',
                 marginRight: '40px',
                 width: '20%'
             }}>
