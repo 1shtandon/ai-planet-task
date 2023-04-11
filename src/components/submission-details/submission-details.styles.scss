@@ -29,6 +29,7 @@
                 width: 7rem;
                 height: 7rem;
                 border-radius: 10%;
+                object-fit: cover;
             }
 
             .submission-title {
@@ -117,6 +118,7 @@
             font-size: large;
             cursor: pointer;
         }
+
     }
 }
 
@@ -201,6 +203,10 @@
             text-decoration: none;
             cursor: pointer;
             margin-top: 0.7rem;
+            
+            @media (max-width: 1150px) {
+                font-size: 0;
+            }
         }
     }
 }
