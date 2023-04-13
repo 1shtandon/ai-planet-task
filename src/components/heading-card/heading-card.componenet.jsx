@@ -5,6 +5,7 @@ import "./heading-card.styles.scss";
 const HeadingCard = () => {
     return (
         <div className="parent-container">
+            <div className='waves' />
             <div className="heading-card-container">
                 <div className="heading-card-info">
                     <div className="heading-card-title">
@@ -15,7 +16,7 @@ const HeadingCard = () => {
                     </p>
                     <Link to="/upload" className="upload-link">
                         <button className="upload-btn">
-                            Upload Submission
+                            Upload
                         </button>
                     </Link>
                 </div>
@@ -23,9 +24,9 @@ const HeadingCard = () => {
                     <Bulb className="bulb" />
 
                 </div>
-                <div className='waves' />
 
             </div>
+
         </div>
 
     );
